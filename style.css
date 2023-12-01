@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+:root {
+    --strong-orange: #F86F03;
+    --almost-white: #F5F7F8;
+    --nice-blue: #525FE1;
+    --almost-black: #45474B;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Raleway', sans-serif;
+    background-color: var(--almost-white);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding-bottom: 2rem;
+}
+
+#title-bar {
+    width: 100%;
+    padding: 1rem;
+    background: var(--almost-black);
+    color: var(--almost-white);
+}
+
+#library-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 1000px;
+    gap: 2rem;
+    padding: 2rem;
+}
+
+.book {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.book-card {
+    height: 300px;
+    width: 180px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 1rem 0.5rem 1rem 0.25rem;
+    gap: 1rem;
+    background: linear-gradient(90deg, var(--almost-black) 15%, var(--nice-blue) 15%);
+    border-radius: 5px;
+    overflow: auto;
+}
+
+.book-text {
+    font-size: 1.15rem;
+    color: var(--almost-white);
+    margin-left: 2rem;
+    white-space-collapse: break-spaces;
+}
+
+.book-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    justify-content: space-between;
+    align-items: center;
+    width: 100px;
+    text-align: center;
+    margin-top: 1rem;
+    padding: 0.25rem;
+    border-radius: 10px;
+    color: var(--almost-white);
+}
+
+.book-read-text {
+    font-size: 1.15rem;
+    color: var(--nice-blue)
+}
+
+.delete-btn {
+    width: 100%;
+    height: 1.75rem;
+    border: none;
+    border-radius: 10px;
+    font-size: 1rem;
+}
+
+#add-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    justify-content: center;
+    width: 400px;
+}
+
+input {
+    height: 1.75rem;
+    border-radius: 10px;
+    padding: 0 10px;
+    border: none;
+    background-color: var(--almost-black);
+    color: #fff;
+}
+
+input::placeholder {
+    color: #ffffff99;
+}
+
+#read-check {
+    position: relative;
+    height: 1.1rem;
+    width: 1.1rem;
+    bottom: 2.15rem;
+    left: 380px;
+    margin-bottom: -1.75rem;
+}
+
+#add-btn:hover {
+    cursor: pointer;
+    background-color: greenyellow;
+    color: var(--almost-black);
+}
+
+.delete-btn:hover {
+    background-color: orangered;
+    color: var(--almost-white);
+    cursor: pointer;
+}
