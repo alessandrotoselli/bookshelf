@@ -7,6 +7,7 @@ const readCheck = document.getElementById('read-check');
 
 let library = [];
 let removeBtns;
+let changeReadBtns;
 
 function Book(title, author, isRead, index) {
     this.title = title;
@@ -47,12 +48,15 @@ function printLibrary() {
         let bookInfo = document.createElement('div');
         bookInfo.classList.add('book-info');
 
-        let isRead = document.createElement('h2');
-        isRead.classList.add('book-read-text');
+        let isReadBtn = document.createElement('button');
+        isReadBtn.classList.add('book-read-btn');
+        isReadBtn.setAttribute('data-index', i);
         if (library[i].isRead) {
-            isRead.textContent = "Read";
+            isReadBtn.textContent = "Read";
+            isReadBtn.style.background = "yellowgreen";
         } else {
-            isRead.textContent = "Not Read";
+            isReadBtn.textContent = "Not Read";
+            isReadBtn.style.background = "orangered";
         }
  
         let deleteBtn = document.createElement('button');
@@ -62,12 +66,25 @@ function printLibrary() {
 
         bookCard.appendChild(title);
         bookCard.appendChild(author);
-        bookInfo.appendChild(isRead);
+        bookInfo.appendChild(isReadBtn);
         bookInfo.appendChild(deleteBtn);
         book.appendChild(bookCard);
         book.appendChild(bookInfo);
         libraryContainer.appendChild(book);
     }
+
+    changeReadBtns = document.querySelectorAll('.book-read-btn');
+    changeReadBtns.forEach(element => element.addEventListener('click', () => {
+        let index = element.getAttribute('data-index');
+        let status = element.textContent === "Read" ? true : false;
+        if (status) {
+            element.textContent = "Not Read";
+            changeBookStatus(index, false)
+        } else {
+            element.textContent = "Read";
+            changeBookStatus(index, true);
+        }
+    }))
 
     removeBtns = document.querySelectorAll('.delete-btn');
     removeBtns.forEach(element => element.addEventListener('click', () => {
@@ -82,5 +99,10 @@ function printLibrary() {
 
 function resetLibrary(index) {
     library.splice(index, 1);
+    printLibrary();
+}
+
+function changeBookStatus(index, status) {
+    library[index].isRead = status;
     printLibrary();
 }
