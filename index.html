@@ -12,6 +12,16 @@
         <h1 id="title">My Library</h1>
     </div>
 
+    <form action="" id="add-form">
+        <label for="book-title" class="form-text">Insert book title:</label>
+        <input type="text" name="book-title" class="add-input" placeholder="Title" id="input-title" required>
+        <label for="book-author" class="form-text">Insert author:</label>
+        <input type="text" name="book-author" class="add-input" placeholder="Author" id="input-author" required>
+        <label for="book-check" class="form-text">Have you read this book?</label>
+        <input type="checkbox" name="book-check" class="add-input" id="read-check">
+        <input type="submit" value="Add to your library" id="add-btn">
+    </form>
+
     <div id="library-container">
         <!--<div class="book" data-index="index">
             <div class="book-card">
@@ -24,16 +34,6 @@
             </div>
         </div>-->
     </div>
-
-    <form action="" id="add-form">
-        <label for="book-title" class="form-text">Insert book title:</label>
-        <input type="text" name="book-title" class="add-input" placeholder="Title" id="input-title">
-        <label for="book-author" class="form-text">Insert author:</label>
-        <input type="text" name="book-author" class="add-input" placeholder="Author" id="input-author">
-        <label for="book-check" class="form-text">Have you read this book?</label>
-        <input type="checkbox" name="book-check" class="add-input" id="read-check">
-        <input type="submit" value="Add to your library" id="add-btn">
-    </form>
 
 </body>
 </html>

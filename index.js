@@ -72,7 +72,9 @@ function printLibrary() {
     removeBtns = document.querySelectorAll('.delete-btn');
     removeBtns.forEach(element => element.addEventListener('click', () => {
         let index = element.getAttribute('data-index');
-        element.parentNode.parentNode.innerHTML = '';
+        let targetBook = element.parentNode.parentNode;
+        targetBook.innerHTML = '';
+        targetBook.remove();
         resetLibrary(index);
     }))
     
