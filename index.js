@@ -17,8 +17,12 @@ function Book(title, author, isRead, index) {
 }
 
 addBtn.addEventListener('click', (event) => {
-    event.preventDefault();
-    addBookToLibrary();
+    let isValid = addForm.checkValidity();
+    if(isValid) {
+        event.preventDefault();
+        addBookToLibrary();
+        addForm.reset();
+    }
 });
 
 function addBookToLibrary() {
